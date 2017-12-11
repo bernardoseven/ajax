@@ -1,4 +1,3 @@
-<%= form_for(@task, remote: true) do |f| %>
-<%= f.hidden_field :active, value: false %>
+<%= form_for(@task.finish, html: { method: :delete }, remote: true) do |f| %>
 <%= f.submit "Desactivar Tarea" %>
 <% end %>

@@ -3,13 +3,13 @@
   <p><%= @task.task %></p>
   <p><%= @task.duration %></p>
     <div id="active_form">
-      <%# if !@task.finish.nil? %>
+      <% if !@task.finish.nil? %>
     
-      <%#= render 'inactive_form' %>
-      <%# else %>
+      <%= render 'inactive_form' %>
+      <% else %>
     
-      <%#= render 'active_form' %>
-      <%# end %>
+      <%= render 'active_form' %>
+      <% end %>
     </div>
  </div>
 </br>
