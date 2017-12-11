@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171211133457) do
+ActiveRecord::Schema.define(version: 20171211170455) do
+
+  create_table "details", force: :cascade do |t|
+    t.string "details"
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_details_on_task_id"
+  end
 
   create_table "finishes", force: :cascade do |t|
     t.boolean "active", default: false

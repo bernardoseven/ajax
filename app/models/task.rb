@@ -1,12 +1,13 @@
 class Task < ApplicationRecord
   has_one :finish
-  
-  def active_task
-    self.create_finish(active: true)
+  has_many :details
+
+  def active
+    details.create(details:"Hola")
   end
   
-  def inactive_task
-    self.finish.destroy
+  def inactive
+    d = Detail.last
+    d.delete
   end
-  
 end
