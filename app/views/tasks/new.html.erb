@@ -1,0 +1,7 @@
+<%= form_for @task do |f| %>
+<%= f.label :Tarea %>
+<%= f.text_field :task %>
+<%= f.label :Duración %>
+<%= f.number_field :duration %>
+<%= f.submit "Crear Tarea" %>
+<% end %>

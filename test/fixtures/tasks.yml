@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: MyString
+  duration: 1
+  active: false
+
+two:
+  task: MyString
+  duration: 1
+  active: false

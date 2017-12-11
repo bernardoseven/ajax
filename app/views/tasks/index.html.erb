@@ -1,0 +1,9 @@
+<h1>Lista de Tareas</h1>
+<% @tasks.each do |f| %>
+ <div class="tasks">
+  <p><%= f.task %></p>
+  <p><%= f.duration %></p>
+  <%= link_to "Ver Tarea", task_path(f) %>
+ </div>
+<% end %>
+<h3><%= link_to "Crear Tarea", new_task_path %></h3>
