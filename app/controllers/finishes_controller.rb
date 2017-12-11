@@ -1,16 +1,16 @@
 class FinishesController < ApplicationController
-  before_action :setup_task, only: [:create, :destroy]
+  before_action :setup_task, only: [:create, :update]
   
   def create
-    @task.build_finish(finish_params)
+    @task.active
     respond_to do |format|
       format.html { redirect_to tasks_path }
       format.js
     end
   end
   
-  def destroy
-    @task.destroy
+  def update
+    @task.inactive
     respond_to do |format|
       format.html { redirect_to tasks_path }
       format.js

@@ -2,12 +2,15 @@ class Task < ApplicationRecord
   has_one :finish
   has_many :details
 
-  def active
-    details.create(details:"Hola")
+  def active(value)
+  	if finish.nil?
+      create_finish(active: value)
+    else
+      finish.update(active: value)
+    end
   end
   
-  def inactive
-    d = Detail.last
-    d.delete
+  def inactive(value)
+    finish.update(active: value)
   end
 end
