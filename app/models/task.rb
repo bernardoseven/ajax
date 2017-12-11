@@ -1,9 +1,12 @@
 class Task < ApplicationRecord
+  has_one :finish
+  
   def active_task
-    self.update(active: true)
+    self.create_finish(active: true)
   end
   
   def inactive_task
-    self.update(active: false)
+    self.finish.destroy
   end
+  
 end
